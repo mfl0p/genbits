@@ -21,6 +21,7 @@ int main(int argc, char *argv[]){
 
 	int primes[27] = {7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113};
 
+/*
 	printf("\n\n  32 bit\n");
 
 	for(int i = 0; i < 27; ++i){
@@ -49,7 +50,7 @@ int main(int argc, char *argv[]){
 			}
 
 			if(j == primes[i]-1){
-				printf("%u ", bitmask);
+				printf("%u };\n\n", bitmask);
 			}
 			else{
 				printf("%u, ", bitmask);
@@ -58,15 +59,13 @@ int main(int argc, char *argv[]){
 
 		}
 
-		printf("};\n\n");
-
 	}
-/*
+*/
 	printf("\n\n  64 bit\n");
 
 	for(int i = 0; i < 27; ++i){
 
-		printf("__constant ulong p%d[%d] = { ",primes[i], primes[i]);
+		printf("const uint64_t p%d[%d] = { ",primes[i], primes[i]);
 
 		for( int j = 0; j < primes[i]; ++j ){
 
@@ -90,16 +89,14 @@ int main(int argc, char *argv[]){
 			}
 
 			if(j == primes[i]-1){
-				printf("0x%" PRIx64 " ", bitmask);
+				printf("0x%" PRIx64 " };\n\n", bitmask);
 			}
 			else{
 				printf("0x%" PRIx64 ", ", bitmask);
 			}
 		}
 
-		printf("};\n\n");
-
 	}
-*/
+
 	return 0;
 }
